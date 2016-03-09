@@ -1,4 +1,4 @@
-.main_video {
+.react_player {
   position: relative;
   width: 640px;
   height: 480px;
@@ -17,4 +17,11 @@
   color: white;
   position: absolute;
   bottom: 16px;
+}
+.bottom_controls {
+  position: absolute;
+  bottom: -36px;
+}
+.custom_controls {
+  background-color: black !important;
 }

@@ -26,9 +26,21 @@ class App extends React.Component {
 
     return (
       <div>
-  	    <ReactPlayer width="640" height="480" controls>
-          <div>components</div>
-          <div>components</div>
+  	    <ReactPlayer width="640" height="480" muted className="video-js vjs-big-play-centered">
+          <div>
+            <button type="button">
+              WWW
+            </button>
+          </div>
+          <div>Component</div>
+          <defaultcontrols />
+          <controls offset="-36" className="custom_controls">
+            <button className="vjs-control vjs-button vjs-subtitles-button">
+              <span className="vjs-control-text">
+                Helloworld
+              </span>
+            </button>
+          </controls>
         </ReactPlayer>
 	    </div>
     );
