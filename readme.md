@@ -5,7 +5,14 @@ To simplify api of video.js, we can use it more comfutable with react.
 ### Use
 ```html
 <!-- controls default be true. you can disable it to set false. -->
-<ReactPlayer width="640" height="480" muted className="video-js vjs-big-play-centered">
+<ReactPlayer width="640" height="480" muted className="video-js vjs-big-play-centered"
+  sources={[{
+    src: '../../otsukimi_recital.mp4', 
+    type: 'video/mp4'
+  }, {
+    src: 'http://static.cdn.moe/ccltestingvideos/otsukimi_recital.webm',
+    type: 'video/webm'
+  }]}>
   <!-- customize components -->
   <div>
     <button type="button">

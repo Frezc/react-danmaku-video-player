@@ -76,15 +76,15 @@ export default class ReactPlayer extends React.Component {
 
   render() {
     const {
-      children, vjsControls
+      children, vjsControls, sources
     } = this.props;
 
     return (
       <div className="react_player">
         { window.videojs || <p>videojs loaded fail.</p> }
         <video ref="video" {...this.props} controls>
-          <source src="../../otsukimi_recital.mp4" type="video/mp4" />
-          <source src="http://static.cdn.moe/ccltestingvideos/otsukimi_recital.webm" type="video/webm" />
+          {sources.map(source => 
+            <source key={source.src} src={source.src} type={source.type} />)}
           <p>Your browser does not support html5 video!</p>
         </video>
         { window.videojs &&
@@ -96,7 +96,11 @@ export default class ReactPlayer extends React.Component {
 }
 
 ReactPlayer.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  sources: PropTypes.arrayOf(PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    type: PropTypes.string
+  }))
 };
 
 ReactPlayer.defaultProps = {};

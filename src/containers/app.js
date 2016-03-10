@@ -26,7 +26,14 @@ class App extends React.Component {
 
     return (
       <div>
-  	    <ReactPlayer width="640" height="480" muted className="video-js vjs-big-play-centered">
+  	    <ReactPlayer width="640" height="480" muted className="video-js vjs-big-play-centered"
+          sources={[{
+            src: '../../otsukimi_recital.mp4', 
+            type: 'video/mp4'
+          }, {
+            src: 'http://static.cdn.moe/ccltestingvideos/otsukimi_recital.webm',
+            type: 'video/webm'
+          }]}>
           <div>
             <button type="button">
               WWW
