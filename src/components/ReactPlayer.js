@@ -20,35 +20,50 @@ export default class ReactPlayer extends React.Component {
 
         // number of controlBar, for location
         components.map(child => {
-          let cb, cbEl;
-          const v_offset = child.getAttribute('offset') || 0;
           switch (child.tagName) {
             case 'DEFAULTCONTROLS':
-              cb = this.player.addChild('ControlBar');
-              cbEl = cb.el();
-              cbEl.style.bottom = `${v_offset.toString()}px`;
-              child.getAttribute('class') && 
-                cb.addClass(child.getAttribute('class'));
+              this.addDefaultControls(child);
               break;
             case 'CONTROLS':
-              cb = this.player.addChild('ControlBar');
-              cbEl = cb.el();
-              this.clearDefaultControl(cb);
-              cbEl.style.bottom = `${v_offset.toString()}px`;
-              Array.prototype.slice.call(child.children).map(e => {
-                cbEl.appendChild(e);
-              });
-              child.getAttribute('class') && 
-                cb.addClass(child.getAttribute('class'));
+              this.addControls(child);
               break;
             default:
+              child.style.position = 'absolute';
               playerEl.appendChild(child);
           }
         });
-
-        this.removeSelf(this.refs.components);
       });
     }
+  }
+
+  addDefaultControls(ele) {
+    const v_offset = ele.getAttribute('offset') || 0;
+    const cb = this.player.addChild('ControlBar');
+    const cbEl = cb.el();
+    cbEl.style.bottom = `${(v_offset * CONTROLBAR_HEIGHT).toString()}em`;
+    ele.getAttribute('class') &&
+      cb.addClass(ele.getAttribute('class'));
+    return cb;
+  }
+
+  addControls(ele) {
+    const v_offset = ele.getAttribute('offset') || 0;
+    const cb = this.player.addChild('ControlBar');
+    const cbEl = cb.el();
+    this.clearDefaultControl(cb);
+    cbEl.style.bottom = `${(v_offset * CONTROLBAR_HEIGHT).toString()}em`;
+    Array.prototype.slice.call(ele.children).map(e => {
+      if (e.tagName === "DEFAULTCONTROL") {
+        cb.addChild(e.getAttribute('name'))
+      } else {
+        cbEl.appendChild(e);
+      }
+    });
+    ele.getAttribute('class') &&
+      cb.addClass(ele.getAttribute('class'));
+    if (!ele.getAttribute('autoHidden'))
+      cb.addClass('not_hidden')
+    return cb;
   }
 
   hasDefaultControls(components) {
@@ -60,7 +75,7 @@ export default class ReactPlayer extends React.Component {
   }
 
   clearDefaultControl(controlBar) {
-    controls.map(c => {
+    CONTROLS.map(c => {
       controlBar.removeChild(c);
     })
   }
@@ -105,7 +120,7 @@ ReactPlayer.propTypes = {
 
 ReactPlayer.defaultProps = {};
 
-const controls = [
+const CONTROLS = [
   'playToggle',
   'volumeMenuButton',
   'currentTimeDisplay',
@@ -121,3 +136,5 @@ const controls = [
   'captionsButton',
   'fullscreenToggle'
 ];
+
+const CONTROLBAR_HEIGHT = 3.0;

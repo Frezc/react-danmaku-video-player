@@ -15,6 +15,7 @@ from '../actions';
 
 //import your components
 import ReactPlayer from '../components/ReactPlayer';
+import VideoControls from '../components/VideoControls';
 
 //App Entry
 class App extends React.Component {
@@ -25,31 +26,18 @@ class App extends React.Component {
     } = this.props;
 
     return (
-      <div>
-  	    <ReactPlayer width="640" height="480" muted className="video-js vjs-big-play-centered"
+  	    <ReactPlayer width="680" height="493" muted className="video-js vjs-big-play-centered vjs-default-skin"
           sources={[{
             src: '../../otsukimi_recital.mp4', 
             type: 'video/mp4'
           }, {
             src: 'http://static.cdn.moe/ccltestingvideos/otsukimi_recital.webm',
             type: 'video/webm'
-          }]}>
-          <div>
-            <button type="button">
-              WWW
-            </button>
+          }]} >
+          <div className="bottom_container outside">
+            <VideoControls />
           </div>
-          <div>Component</div>
-          <defaultcontrols />
-          <controls offset="-36" className="custom_controls">
-            <button className="vjs-control vjs-button vjs-subtitles-button">
-              <span className="vjs-control-text">
-                Helloworld
-              </span>
-            </button>
-          </controls>
         </ReactPlayer>
-	    </div>
     );
   }
 }
