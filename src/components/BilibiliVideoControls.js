@@ -6,9 +6,9 @@ import ToggleButton from './ToggleButton';
 import SeekBar from './SeekBar';
 import TimeLabel from './TimeLabel';
 import VolumeBar from './VolumeBar';
-import CommentsControl from './CommentsControl';
+import CommentsDisplayControl from './CommentsDisplayControl';
 
-function VideoControls(props) {
+function BilibiliVideoControls(props) {
   return (
     <div className="RP-Controls">
       <ToggleButton 
@@ -30,7 +30,7 @@ function VideoControls(props) {
         width={80}
         volume={50}
         left={-93} />
-      <CommentsControl
+      <CommentsDisplayControl
         left={-75} />
       <ToggleButton 
         icons={['vjs-icon-volume-high', 'vjs-icon-volume-mute']} 
@@ -52,4 +52,4 @@ function VideoControls(props) {
 }
 
 
-export default VideoControls;
+export default BilibiliVideoControls;

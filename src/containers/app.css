@@ -3,12 +3,27 @@
   width: 640px;
   height: 480px;
 }
+
 .bottom_container {
   position: absolute;
   bottom: 0;
   height: 50px;
   width: 100%;
 }
+
 .bottom_container.outside {
   bottom: -50px;
+}
+
+p, span {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
 }

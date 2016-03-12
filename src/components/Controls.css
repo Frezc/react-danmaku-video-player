@@ -8,6 +8,11 @@
   font-size: 18px;
 }
 
+.RP-Controls {
+  font-family: Helvetica,Arial,"Source Han Sans CN","Hiragino Sans GB","Microsoft Yahei","Microsoft Jhenghei",STHeiti,verdana,sans-serif;
+  color: #444;
+}
+
 .RP-Controls .RP-Control {
   position: absolute;
   height: 100%;
@@ -103,7 +108,7 @@
   color: #444;
 }
 
-.RP-Controls .RP-CommentOption {
+.RP-Controls .RP-CommentDisplayOption {
   width: 120px;
   height: 42px;
   padding: 10px;
@@ -114,7 +119,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
-.RP-Controls .RP-CommentOption .label {
+.RP-Controls .RP-CommentDisplayOption .label {
   margin: 0;
   text-align: left;
   color: #666;
@@ -122,13 +127,110 @@
   font-size: 12px;
 }
 
-.RP-Controls .RP-CommentOption .opacity-bar {
+.RP-Controls .RP-CommentDisplayOption .opacity-bar {
   position: relative;
   margin-bottom: 8px;
   height: 10px;
 }
 
-.RP-Controls .RP-CommentOption .opacity-bar .bar {
+.RP-Controls .RP-CommentDisplayOption .opacity-bar .bar {
   width: 100%;
   left: 0;
+}
+
+.RP-Controls .RP-CommentStyleOption {
+  width: 220px;
+  height: 160px;
+  background: rgba(255, 255, 255, .9);
+  position: absolute;
+  padding: 10px;
+  bottom: 25px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  z-index: 1;
+  cursor: auto;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-title {
+  margin: 0;
+  text-align: left;
+  color: #666;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-select {
+  text-align: center;
+  color: #a2a2a2;
+  height: 52px;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-option {
+  position: relative;
+  display: inline-block;
+  height: 44px;
+  line-height: 64px;
+  width: 60px;
+  font-size: 10px;
+  border-radius: 5px;
+  border: 2px solid;
+  margin: 4px 2px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-option.on {
+  color: #fff;
+  background: #666;
+  border-color: #666;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-option:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  line-height: 30px
+}
+
+.RP-Controls .RP-CommentStyleOption .style-option[value="18"]:after {
+  content: "A";
+  font-size: 18px;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-option[value="25"]:after {
+  content: "A";
+  font-size: 25px;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-option[value="5"]:after {
+  content: "\258a\258a\258a";
+  font-size: 6px;
+  line-height: 8px;
+  top: 4px;
+}
+.RP-Controls .RP-CommentStyleOption .style-option[value="1"]:before {
+  position: absolute;
+  white-space: pre;
+  content: "\25c0\258a\258a\258a";
+  font-size: 6px;
+  line-height: 8px;
+  top: 6px;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-option[value="1"]:after {
+  position: absolute;
+  white-space: pre;
+  content: "       \25c0\258a\258a\258a";
+  font-size: 6px;
+  line-height: 8px;
+  top: 12px;
+}
+
+.RP-Controls .RP-CommentStyleOption .style-option[value="4"]:after {
+  content: "\258a\258a\258a";
+  font-size: 6px;
+  line-height: 8px;
+  top: 16px;
 }

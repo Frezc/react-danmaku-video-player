@@ -15,7 +15,8 @@ from '../actions';
 
 //import your components
 import ReactPlayer from '../components/ReactPlayer';
-import VideoControls from '../components/VideoControls';
+import BilibiliVideoControls from '../components/BilibiliVideoControls';
+import BilibiliCommentSender from '../components/BilibiliCommentSender';
 
 //App Entry
 class App extends React.Component {
@@ -35,7 +36,8 @@ class App extends React.Component {
             type: 'video/webm'
           }]} >
           <div className="bottom_container outside">
-            <VideoControls />
+            <BilibiliVideoControls />
+            <BilibiliCommentSender />
           </div>
         </ReactPlayer>
     );
