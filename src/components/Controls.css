@@ -13,6 +13,16 @@
   color: #444;
 }
 
+.RP-Controls .RP-Hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.RP-Controls .RP-Visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 .RP-Controls .RP-Control {
   position: absolute;
   height: 100%;
@@ -233,4 +243,228 @@
   font-size: 6px;
   line-height: 8px;
   top: 16px;
+}
+
+.RP-Controls .RP-CommentColorOption {
+  width: 347px;
+  height: 170px;
+  background: rgba(255, 255, 255, .9);
+  position: absolute;
+  bottom: 25px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  z-index: 1;
+  cursor: auto;
+}
+
+.RP-Controls .RP-ColorPicker .color-pick {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 156px;
+  height: 156px;
+  outline: 1px solid #aaa;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.RP-Controls .RP-ColorPicker .overlay1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%);
+}
+
+.RP-Controls .RP-ColorPicker .overlay2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%);
+}
+
+.RP-Controls .RP-ColorPicker .color-selector-outer {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  margin: -6px 0 0 -6px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.RP-Controls .RP-ColorPicker .color-selector-inner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.RP-Controls .RP-ColorPicker .hue-pick {
+  position: absolute;
+  top: 6px;
+  left: 175px;
+  width: 19px;
+  height: 156px;
+  border: 1px solid #aaa;
+  cursor: ns-resize;
+  background: linear-gradient(to bottom,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000);
+}
+
+.RP-Controls .RP-ColorPicker .hue-pick-arrows {
+  position: absolute;
+  left: -8px;
+  width: 35px;
+  height: 7px;
+  margin: -7px 0 0 0;
+}
+
+.RP-Controls .RP-ColorPicker .hue-pick-larrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 7px solid #858585;
+}
+
+.RP-Controls .RP-ColorPicker .hue-pick-rarrow {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 7px solid #858585;
+}
+
+.RP-Controls .RP-ColorPicker .current-color {
+  position: absolute;
+  left: 207px;
+  top: 6px;
+  width: 130px;
+  height: 25px;
+  background: #f00;
+  border: 1px solid #8f8f8f;
+}
+
+.RP-Controls .RP-ColorPicker .hex-field {
+  top: 135px;
+  width: 68px;
+  left: 207px;
+  position: absolute;
+  height: 20px;
+  overflow: hidden;
+  background: #f3f3f3;
+  color: #b8b8b8;
+  font-size: 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+}
+
+.RP-Controls .RP-ColorPicker .field-letter {
+  position: absolute;
+  width: 17px;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 4px;
+  background: #efefef;
+  border-right: 1px solid #bdbdbd;
+  font-weight: bold;
+  color: #777;
+}
+
+.RP-Controls .RP-ColorPicker .hex-field input,
+.RP-Controls .RP-ColorPicker .color-field input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 20px;
+  line-height: 20px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-family: Arial,Helvetica,sans-serif;
+  color: #555;
+  text-align: right;
+  outline: none;
+}
+
+.RP-Controls .RP-ColorPicker .color-field input {
+  right: 11px;
+}
+
+.RP-Controls .RP-ColorPicker .color-field {
+  position: absolute;
+  height: 22px;
+  width: 60px;
+  overflow: hidden;
+  background: #f3f3f3;
+  color: #b8b8b8;
+  font-size: 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+}
+
+.RP-Controls .RP-ColorPicker .color-field-arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 9px;
+  height: 21px;
+  cursor: ns-resize;
+}
+
+.RP-Controls .RP-ColorPicker .color-field-arrows .color-field-uparr {
+  position: absolute;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #959595;
+}
+
+.RP-Controls .RP-ColorPicker .color-field-arrows .color-field-dnarr {
+  position: absolute;
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #959595;
+}
+
+.RP-Controls .RP-Comment-Input {
+  position: absolute;
+  color: #666;
+  width: calc(100% - 148px);
+  box-shadow: inset 0 5px 10px rgba(0,0,0,.07);
+  height: 16px;
+  border: 0;
+  outline: 0;
+  padding: 2px 4px;
+  transition: box-shadow .2s ease-in-out;
+}
+
+.RP-Controls .RP-Comment-Send {
+  position: absolute;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  width: 62px;
+  height: 21px;
+  line-height: 22px;
+  border: 1px solid #0085b3;
+  border-top: none;
+  cursor: pointer;
+  background-color: #00a1d8;
+  transition: all .2s ease-in-out;
 }

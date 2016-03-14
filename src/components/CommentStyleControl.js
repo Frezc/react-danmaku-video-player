@@ -4,8 +4,16 @@ import React, {
 from 'react';
 import ToggleButton from './ToggleButton';
 
+function getOptionClassName(visible) {
+  if (visible) {
+    return "RP-CommentStyleOption RP-Visible";
+  } else {
+    return "RP-CommentStyleOption RP-Hidden";
+  }
+}
+
 function CommentStyleControl(props) {
-  const { left, width, active } = props;
+  const { left, width, active, visible } = props;
 
   let style = {
     width: width
@@ -20,10 +28,11 @@ function CommentStyleControl(props) {
   return (
     <div className="RP-Control" style={style}>
       <ToggleButton
-        icons={['vjs-icon-subtitles']}
+        icons={['icon-font']}
         selected={0}
-        dark={active} />
-      <div className="RP-CommentStyleOption" style={{ left: 5 }}>
+        dark={active}
+        width={width} />
+      <div className={getOptionClassName(visible)} style={{ left: 5 }}>
         <p className="style-title">弹幕字号</p>
         <div className="style-select">
           <div className="style-option on" value="18">
@@ -53,13 +62,15 @@ function CommentStyleControl(props) {
 CommentStyleControl.propTypes = {
   left: PropTypes.number,
   width: PropTypes.number,
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  visible: PropTypes.bool
 };
 
 CommentStyleControl.defaultProps = {
   left: 0,
   width: 40,
-  active: false
+  active: false,
+  visible: false
 };
 
 export default CommentStyleControl;

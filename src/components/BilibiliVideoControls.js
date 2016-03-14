@@ -12,7 +12,7 @@ function BilibiliVideoControls(props) {
   return (
     <div className="RP-Controls">
       <ToggleButton 
-        icons={['vjs-icon-play', 'vjs-icon-pause']} 
+        icons={['icon-play', 'icon-pause']} 
         selected={0}
         width={35}
         left={0}
@@ -22,7 +22,7 @@ function BilibiliVideoControls(props) {
       <TimeLabel 
         left={-184}/>
       <ToggleButton 
-        icons={['vjs-icon-volume-high', 'vjs-icon-volume-mute']} 
+        icons={['icon-volume-up', 'icon-volume-off']} 
         selected={0}
         left={-165}
       />
@@ -33,17 +33,17 @@ function BilibiliVideoControls(props) {
       <CommentsDisplayControl
         left={-75} />
       <ToggleButton 
-        icons={['vjs-icon-volume-high', 'vjs-icon-volume-mute']} 
+        icons={['icon-retweet']} 
         selected={0}
         left={-50}
       />
       <ToggleButton 
-        icons={['vjs-icon-volume-high', 'vjs-icon-volume-mute']} 
+        icons={['icon-resize-horizontal']} 
         selected={0}
         left={-25}
       />
       <ToggleButton 
-        icons={['vjs-icon-fullscreen-enter', 'vjs-icon-fullscreen-exit']} 
+        icons={['icon-resize-full', 'icon-resize-small']} 
         selected={0}
         left={-0.0000000001}
       />

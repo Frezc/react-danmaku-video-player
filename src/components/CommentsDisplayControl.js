@@ -21,9 +21,10 @@ function CommentsDisplayControl(props) {
   return (
     <div className="RP-Control" style={style}>
       <ToggleButton
-        icons={['vjs-icon-subtitles']}
+        icons={['icon-comment']}
         selected={0}
-        dark={active} />
+        dark={active}
+        width={width} />
       <div className="RP-CommentDisplayOption" style={{ left: -48 }}>
         <p className="label">弹幕不透明度</p>
         <div className="opacity-bar">

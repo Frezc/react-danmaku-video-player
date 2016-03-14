@@ -1,3 +1,5 @@
 @import '../containers/app.css';
 @import '../comment-core-library/style.css';
 @import '../components/Controls.css';
+@import '../assets/icon.css';
+@import './video-js-nofont.css';
