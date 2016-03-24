@@ -14,32 +14,18 @@ import {
 from '../actions';
 
 //import your components
-import ReactPlayer from '../components/ReactPlayer';
-import BilibiliVideoControls from '../components/BilibiliVideoControls';
-import BilibiliCommentSender from '../components/BilibiliCommentSender';
+import ReactDanmakuPlayer from './ReactDanmakuPlayer';
 
 //App Entry
 class App extends React.Component {
 
   render() {
     const {
-      text, dispatch
+      dispatch
     } = this.props;
 
     return (
-  	    <ReactPlayer width="680" height="493" muted className="video-js vjs-big-play-centered vjs-default-skin"
-          sources={[{
-            src: '../../otsukimi_recital.mp4', 
-            type: 'video/mp4'
-          }, {
-            src: 'http://static.cdn.moe/ccltestingvideos/otsukimi_recital.webm',
-            type: 'video/webm'
-          }]} >
-          <div className="bottom_container outside">
-            <BilibiliVideoControls />
-            <BilibiliCommentSender />
-          </div>
-        </ReactPlayer>
+      <ReactDanmakuPlayer />
     );
   }
 }

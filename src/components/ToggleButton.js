@@ -8,7 +8,7 @@ function getClassName(icon, dark) {
 }
 
 function ToggleButton(props) {
-  const { icons, selected, dark, width, left } = props;
+  const { icons, selected, dark, width, left, onPress } = props;
 
   let style = { 
     width: width
@@ -23,7 +23,8 @@ function ToggleButton(props) {
   return (
     <div 
       className={getClassName(icons[selected], dark)} 
-      style={style} 
+      style={style}
+      onClick={e => onPress && onPress(e)}
     >
     </div>
   );
@@ -35,7 +36,8 @@ ToggleButton.propTypes = {
   selected: PropTypes.number.isRequired,
   dark: PropTypes.bool,
   width: PropTypes.number,
-  left: PropTypes.number
+  left: PropTypes.number,
+  onPress: PropTypes.func
 };
 
 ToggleButton.defaultProps = {

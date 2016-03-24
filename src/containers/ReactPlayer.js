@@ -5,6 +5,8 @@ from 'react';
 
 export default class ReactPlayer extends React.Component {
   componentDidMount() {
+    const { playerRef } = this.props;
+
     if (window.videojs) {
       const components = Array.prototype.slice.call(this.refs.components.children);
 
@@ -32,6 +34,8 @@ export default class ReactPlayer extends React.Component {
               playerEl.appendChild(child);
           }
         });
+
+        playerRef && playerRef(this.player);
       });
     }
   }
@@ -115,7 +119,8 @@ ReactPlayer.propTypes = {
   sources: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string.isRequired,
     type: PropTypes.string
-  }))
+  })),
+  playerRef: PropTypes.func //call after element mounted and player ready
 };
 
 ReactPlayer.defaultProps = {};

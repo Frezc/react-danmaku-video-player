@@ -2,8 +2,8 @@ import React, {
   PropTypes
 }
 from 'react';
-import CommentStyleControl from './CommentStyleControl';
-import CommentColorControl from './CommentColorControl';
+import CommentStyleControl from '../components/CommentStyleControl';
+import CommentColorControl from '../components/CommentColorControl';
 
 function BilibiliCommentSender(props) {
 
