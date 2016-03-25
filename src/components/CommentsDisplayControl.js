@@ -6,7 +6,7 @@ import ToggleButton from './ToggleButton';
 import Bar from './Bar';
 
 function CommentsDisplayControl(props) {
-  const { left, width, active } = props;
+  const { left, width, active, onPress } = props;
 
   let style = {
     width: width
@@ -24,7 +24,9 @@ function CommentsDisplayControl(props) {
         icons={['icon-comment']}
         selected={0}
         dark={active}
-        width={width} />
+        width={width}
+        onPress={onPress}
+      />
       <div className="RP-CommentDisplayOption" style={{ left: -48 }}>
         <p className="label">弹幕不透明度</p>
         <div className="opacity-bar">
@@ -39,13 +41,14 @@ function CommentsDisplayControl(props) {
 CommentsDisplayControl.propTypes = {
   left: PropTypes.number,
   width: PropTypes.number,
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  onPress: PropTypes.func
 };
 
 CommentsDisplayControl.defaultProps = {
   left: 0,
   width: 25,
-  active: true
+  active: false
 };
 
 export default CommentsDisplayControl;

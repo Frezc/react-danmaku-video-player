@@ -24,7 +24,7 @@ function ToggleButton(props) {
     <div 
       className={getClassName(icons[selected], dark)} 
       style={style}
-      onClick={e => onPress && onPress(e)}
+      onClick={onPress}
     >
     </div>
   );

@@ -13,7 +13,11 @@ class ReactDanmakuPlayer extends React.Component {
     super(props);
 
     this.state = {
-      play: false
+      play: false,
+      commentsDisplay: false,
+      loop: false,
+      widescreen: false,
+      fullscreen: false
     }
   }
 
@@ -21,6 +25,31 @@ class ReactDanmakuPlayer extends React.Component {
     console.log('playpress')
     this.setState({
       play: !this.state.play
+    });
+  }
+
+  onCommentsDisplay() {
+    console.log('commentDisplay')
+    this.setState({
+      commentsDisplay: !this.state.commentsDisplay
+    });
+  }
+
+  onLoopPress() {
+    this.setState({
+      loop: !this.state.loop
+    });
+  }
+
+  onWidescreenPress() {
+    this.setState({
+      widescreen: !this.state.widescreen
+    });
+  }
+
+  onFullscreenPress() {
+    this.setState({
+      fullscreen: !this.state.fullscreen
     });
   }
 
@@ -42,6 +71,15 @@ class ReactDanmakuPlayer extends React.Component {
             progress={30}
             buffered={50}
             wholeTime={1000}
+            volume={0}
+            commentsDisplay={this.state.commentsDisplay}
+            onCommentsDisplay={e => this.onCommentsDisplay()}
+            loop={this.state.loop}
+            onLoopPress={e => this.onLoopPress()}
+            widescreen={this.state.widescreen}
+            onWidescreenPress={e => this.onWidescreenPress()}
+            fullscreen={this.state.fullscreen}
+            onFullscreenPress={e => this.onFullscreenPress()}
           />
           <BilibiliCommentSender />
         </div>

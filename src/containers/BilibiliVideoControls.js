@@ -9,7 +9,11 @@ import VolumeBar from '../components/VolumeBar';
 import CommentsDisplayControl from '../components/CommentsDisplayControl';
 
 function BilibiliVideoControls(props) {
-  const { play, onPlayPress } = props;
+  const { 
+    play, onPlayPress, loop, onLoopPress, widescreen, 
+    onWidescreenPress, fullscreen, onFullscreenPress,
+    commentsDisplay, onCommentsDisplay, volume, onVolumeChange
+  } = props;
 
   return (
     <div className="RP-Controls">
@@ -18,7 +22,7 @@ function BilibiliVideoControls(props) {
         selected={play ? 1 : 0}
         width={35}
         left={0}
-        onPress={e => onPlayPress && onPlayPress(e)}
+        onPress={onPlayPress}
       />
       <SeekBar
         left={35}/>
@@ -26,35 +30,45 @@ function BilibiliVideoControls(props) {
         left={-184}/>
       <ToggleButton 
         icons={['icon-volume-up', 'icon-volume-off']} 
-        selected={0}
+        selected={volume == 0 ? 1 : 0}
         left={-165}
       />
       <VolumeBar
         width={80}
-        volume={50}
-        left={-93} />
+        volume={volume}
+        left={-93}
+      />
       <CommentsDisplayControl
-        left={-75} />
+        left={-75}
+        active={commentsDisplay}
+        onPress={onCommentsDisplay}
+      />
       <ToggleButton 
         icons={['icon-retweet']} 
         selected={0}
         left={-50}
+        dark={loop}
+        onPress={onLoopPress}
       />
       <ToggleButton 
         icons={['icon-resize-horizontal']} 
         selected={0}
         left={-25}
+        dark={widescreen}
+        onPress={onWidescreenPress}
       />
       <ToggleButton 
         icons={['icon-resize-full', 'icon-resize-small']} 
-        selected={0}
+        selected={fullscreen ? 1 : 0}
         left={-0.0000000001}
+        onPress={onFullscreenPress}
       />
     </div>
   );
 }
 
 BilibiliVideoControls.propTypes = {
+  // the type of prop that is number is between [0, 100]
   play: PropTypes.bool,
   onPlayPress: PropTypes.func,
   progress: PropTypes.number.isRequired,
